@@ -62,6 +62,7 @@ object ClassificationExample {
         .setNumWorker(cmdLine.numWorker)
         .setExecutorJars(cmdLine.jars)
         .setJava(cmdLine.java)
+        .setTimeout(60)
 
       val trainData = parseRawData(sc, cmdLine.input)
       val start = System.currentTimeMillis
