@@ -42,6 +42,8 @@ object ClassificationExample {
       val conf = new SparkConf().setAppName("MXNet")
       val sc = new SparkContext(conf)
 
+      sc.setLogLevel("DEBUG")
+
       val network = if (cmdLine.model == "mlp") getMlp else getLenet
       val dimension = if (cmdLine.model == "mlp") Shape(784) else Shape(1, 28, 28)
       val devs =
